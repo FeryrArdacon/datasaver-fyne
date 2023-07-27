@@ -1,0 +1,6 @@
+- go get fyne.io/fyne/v2
+- go mod tidy
+
+under some linux systems you need to install the following packages
+
+- sudo apt-get install golang gcc libgl1-mesa-dev xorg-dev
