@@ -11,6 +11,7 @@ import (
 func main() {
 	application := app.NewWithID("FeryrArdacon.datasaver-fyne")
 	application.SetIcon(theme.FyneLogo())
+	application.Settings().SetTheme(theme.LightTheme())
 	window := application.NewWindow("Datensicherung")
 
 	var records = []*files.Record{
@@ -19,7 +20,7 @@ func main() {
 	}
 
 	window.SetContent(view.CreateRecordList(records))
-	window.Resize(fyne.NewSize(640, 420))
+	window.Resize(fyne.NewSize(860, 640))
 
 	window.ShowAndRun()
 }
