@@ -2,21 +2,16 @@ package main
 
 import (
 	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/widget"
+	"fyne.io/fyne/v2/theme"
+	"github.com/FeryrArdacon/datasaver-fyne/view"
 )
 
 func main() {
-	app := app.New()
-	window := app.NewWindow("Hello")
+	application := app.NewWithID("FeryrArdacon.datasaver-fyne")
+	application.SetIcon(theme.FyneLogo())
+	window := application.NewWindow("Hello")
 
-	helloLabel := widget.NewLabel("Hello Fyne!")
-	window.SetContent(container.NewVBox(
-		helloLabel,
-		widget.NewButton("Hi!", func() {
-			helloLabel.SetText("Welcome :)")
-		}),
-	))
+	window.SetContent(view.CreateRecordList())
 
 	window.ShowAndRun()
 }
